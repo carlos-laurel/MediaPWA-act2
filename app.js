@@ -269,7 +269,6 @@ if (btnVibrar) {
       // Inicia vibracion repetida (300ms vibra, 100ms pausa)
       vibrando = true;
       btnVibrar.textContent = 'Detener vibracion';
-      //navigator.vibrate([300, 100]);
       vibrarInterval = setInterval(() => {
         navigator.vibrate([300, 100]);      // patron corto
       }, 400);
