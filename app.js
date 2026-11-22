@@ -219,7 +219,6 @@ btnStartRec.addEventListener('click', async () => {
  
     // Comienza a grabar y actualiza botones
     mediaRecorder.start();
-    btnStopRec.disabled = false;
     btnStartRec.disabled = true;            // Evita doble inicio
   } catch (err) {
     alert('No se pudo iniciar el microfono: ' + err.message);
@@ -270,6 +269,7 @@ if (btnVibrar) {
       // Inicia vibracion repetida (300ms vibra, 100ms pausa)
       vibrando = true;
       btnVibrar.textContent = 'Detener vibracion';
+      navigator.vibrate([300, 100]);
       vibrarInterval = setInterval(() => {
         navigator.vibrate([300, 100]);      // patron corto
       }, 400);
